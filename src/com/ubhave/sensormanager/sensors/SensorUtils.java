@@ -54,6 +54,7 @@ import com.ubhave.sensormanager.sensors.pull.WifiSensor;
 import com.ubhave.sensormanager.sensors.push.BatterySensor;
 import com.ubhave.sensormanager.sensors.push.ConnectionStateSensor;
 import com.ubhave.sensormanager.sensors.push.ConnectionStrengthSensor;
+import com.ubhave.sensormanager.sensors.push.PushLocationSensor;
 import com.ubhave.sensormanager.sensors.push.PassiveLocationSensor;
 import com.ubhave.sensormanager.sensors.push.PhoneStateSensor;
 import com.ubhave.sensormanager.sensors.push.ProximitySensor;
@@ -90,6 +91,7 @@ public class SensorUtils
 	public final static int SENSOR_TYPE_HUMIDITY = 5023;
 	public final static int SENSOR_TYPE_MAGNETIC_FIELD = 5024;
 	public final static int SENSOR_TYPE_STEP_COUNTER = 5025;
+	public final static int SENSOR_TYPE_PUSH_LOCATION = 5026;
 	
 	public final static String SENSOR_NAME_ACCELEROMETER = "Accelerometer";
 	public final static String SENSOR_NAME_BATTERY = "Battery";
@@ -116,7 +118,8 @@ public class SensorUtils
 	public final static String SENSOR_NAME_HUMIDITY = "Humidity";
 	public final static String SENSOR_NAME_MAGNETIC_FIELD = "MagneticField";
 	public final static String SENSOR_NAME_STEP_COUNTER = "StepCounter";
-
+	public final static String SENSOR_NAME_PUSH_LOCATION = "PushLocation";
+	
 	private static SensorEnum getSensor(int sensorType) throws ESException
 	{
 		for (SensorEnum s : SensorEnum.values())
@@ -229,6 +232,8 @@ public class SensorUtils
 			return MagneticFieldSensor.getSensor(context);
 		case SENSOR_TYPE_STEP_COUNTER:
 			return StepCounterSensor.getSensor(context);
+		case SENSOR_TYPE_PUSH_LOCATION:
+			return PushLocationSensor.getSensor(context);
 		default:
 			throw new ESException(ESException.UNKNOWN_SENSOR_TYPE, "Unknown sensor id: " + id);
 		}

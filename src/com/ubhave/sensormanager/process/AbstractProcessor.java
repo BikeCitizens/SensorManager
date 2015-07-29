@@ -25,6 +25,7 @@ import com.ubhave.sensormanager.process.push.ConnectionStrengthProcessor;
 import com.ubhave.sensormanager.process.push.PassiveLocationProcessor;
 import com.ubhave.sensormanager.process.push.PhoneStateProcessor;
 import com.ubhave.sensormanager.process.push.ProximityProcessor;
+import com.ubhave.sensormanager.process.push.PushLocationProcessor;
 import com.ubhave.sensormanager.process.push.SMSProcessor;
 import com.ubhave.sensormanager.process.push.ScreenProcessor;
 import com.ubhave.sensormanager.sensors.SensorUtils;
@@ -88,6 +89,8 @@ public abstract class AbstractProcessor
 			return new MagneticFieldProcessor(c, setRawData, setProcessedData);
 		case SensorUtils.SENSOR_TYPE_STEP_COUNTER:
 			return new StepCounterProcessor(c, setRawData, setProcessedData);
+		case SensorUtils.SENSOR_TYPE_PUSH_LOCATION:
+			return new PushLocationProcessor(c, setRawData, setProcessedData);
 		default:
 			throw new ESException(ESException.UNKNOWN_SENSOR_TYPE, "No processor defined for this sensor id ("+sensorType+").");
 		}
