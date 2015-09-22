@@ -2,6 +2,9 @@
  Copyright (c) 2014, Idiap
  Hugues Salamin, hugues.salamin@idiap.ch
 
+ Contributors:
+ Mihai Ghete <m.ghete@bikecityguide.org>, BikeCityGuide Apps GmbH, 2015
+ 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
 copyright notice and this permission notice appear in all copies.

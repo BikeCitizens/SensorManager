@@ -9,6 +9,7 @@ The ES Sensor Manager Library is a library project for Android application devel
 * Sibelius Seraphini ([sibeliusseraphini](https://github.com/sibeliusseraphini)), University of São Paulo
 * Hugues Salamin, ([hsalamin](http://github.com/hsalamin)) Idiap Research Institute, Switzerland
 * Olivier Bornet ([puckch](http://github.com/puckch)), Idiap Research Institute, Switzerland
+* Mihai Ghete ([bcg-mihai](https://github.com/bcg-mihai)), BikeCityGuide Apps GmbH, Austria
 
 ## Docs, Apps, Research
 Check the [docs/](https://github.com/nlathia/SensorManager/tree/master/docs) directory of this project.

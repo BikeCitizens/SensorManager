@@ -2,6 +2,9 @@
  Copyright (c) 2014, Idiap
 Hugues Salamin, hugues.salamin@idiap.ch
 
+ Contributors:
+ Mihai Ghete <m.ghete@bikecityguide.org>, BikeCityGuide Apps GmbH, 2015
+
 This file was developed to add passive location sensor to the SensorManager library
 from https://github.com/nlathia/SensorManager.
 
