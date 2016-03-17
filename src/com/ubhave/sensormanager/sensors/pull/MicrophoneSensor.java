@@ -51,6 +51,8 @@ public class MicrophoneSensor extends AbstractMediaSensor
 	private ArrayList<Long> timestampList;
 	private MicrophoneData micData;
 	private boolean isRecording;
+	
+	private volatile int recordingCountLock;
 
 	public static MicrophoneSensor getSensor(Context context) throws ESException
 	{
@@ -147,18 +149,21 @@ public class MicrophoneSensor extends AbstractMediaSensor
 		isRecording = prepareToSense();
 		if (isRecording)
 		{
+			recordingCountLock++;
+			
 			try
 			{
 				(new Thread()
 				{
 					public void run()
 					{
+						int localRecordingCountLock = recordingCountLock;
 						recorder.getMaxAmplitude();
 						while (isSensing())
 						{
 							synchronized (recorder)
 							{
-								if (isRecording)
+								if (isRecording && recordingCountLock == localRecordingCountLock)
 								{
 									maxAmplitudeList.add(recorder.getMaxAmplitude());
 									timestampList.add(System.currentTimeMillis());
